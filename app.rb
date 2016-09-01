@@ -5,11 +5,6 @@ class Battle < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello Battle!'
-  end
-
-
-  get '/names' do
     erb(:index)
   end
 
@@ -25,8 +20,6 @@ class Battle < Sinatra::Base
     @hp = 100
     erb(:play)
   end
-
-
 
   # start the server if ruby file executed directly
   run! if app_file == $0
