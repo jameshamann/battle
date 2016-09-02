@@ -9,7 +9,7 @@ class Player
     @hp = 100
   end
 
-  def attack
+  def receive_damage
     @hp -= DEFAULT_DAMAGE
   end
 

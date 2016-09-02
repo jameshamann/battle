@@ -15,7 +15,7 @@ describe Player do
     end
 
     it 'reduces by 10 when attacked' do
-      expect{lawrence.attack}.to change{lawrence.hp}.by -10
+      expect{lawrence.receive_damage}.to change{lawrence.hp}.by -10
     end
   end
 
