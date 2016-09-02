@@ -1,10 +1,23 @@
 require 'spec_helper'
 
-feature 'attacking player_two' do
+feature 'attack' do
+
+  before(:each) do
+    sign_in_and_play
+  end
 
   scenario 'attacking player_two' do
-    sign_in_and_play
     click_button 'Attack!'
     expect(page).to have_content 'Lawrence attacked James'
   end
+
+  scenario 'page loads, initial hit points are displayed' do
+    expect(page).to have_content('James: HP 100')
+  end
+
+  scenario 'player one attacks player two' do
+    click_button('Attack!')
+    expect(page).to have_content('HP 90')
+  end
+
 end
