@@ -1,5 +1,7 @@
 
-<h1><%= @game.player_1.name %> and <%= @game.player_2.name %>.. BATTLE!</h1>
+<h1><%= @game.player_1.name %> and <%= @game.player_2.name %>: BATTLE!</h1>
+
+<h2><%= @game.player_1.name %>: HP <%= @game.player_1.hp %></h2>
 
 <h2><%= @game.player_2.name %>: HP <%= @game.player_2.hp %></h2>
 
@@ -8,5 +10,5 @@
 </form>
 
 <% if @attacked %>
-<h2><%= @game.player_1.name %> attacked <%= @game.player_2.name %></h2>
+<h2> <%= @game.attacked_player.name %> has been attacked!</h2>
 <% end %>
