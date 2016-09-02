@@ -11,6 +11,16 @@ describe Game do
       expect(player_2).to receive(:receive_damage)
       game.attack(player_2)
     end
+
+    it 'first attacked player is player 2' do
+      expect(game.attacked_player).to eq player_2
+    end
+
+    it 'player_2 attacks player_1' do
+      allow(player_2).to receive(:receive_damage)
+      game.attack
+      expect(game.attack).to eq player_1
+    end
   end
 
   it 'returns player_1 instance' do
@@ -20,13 +30,4 @@ describe Game do
   it 'returns player_2 instance' do
     expect(game.player_2).to eq player_2
   end
-
-  describe '#turn_switcher' do
-    it 'second attack is on player_1' do
-      allow(player_2).to receive(:receive_damage)
-      game.attack(player_2)
-      expect(game.attacked_player).to eq player_1
-    end
-  end
-
 end
